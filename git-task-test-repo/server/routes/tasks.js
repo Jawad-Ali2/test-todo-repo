@@ -8,7 +8,7 @@ const db = require('../db/mockDb');
 // GET /api/tasks
 // FIXME: pagination not implemented (risks OOM on large datasets)
 router.get('/', (req, res) => {
-  // TODO: support query filters (status, assignee, label)
+  
   const tasks = db.getTasks();
   res.json(tasks);
 });
@@ -17,6 +17,7 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
   const { title, description } = req.body;
   if (!title) {
+    // NOTE: client should validate title, but server must also protect
     return res.status(400).json({ error: 'title required' });
   }
 
