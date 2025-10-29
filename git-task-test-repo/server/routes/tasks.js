@@ -23,7 +23,7 @@ router.post('/', (req, res) => {
 
   // HACK: we accept raw description for demo; real app would sanitize
   const task = db.createTask({ title, description });
-  // TODO: emit event for task.created -> wire to real queue laters
+  // TODO: emit event for task.created -> wire to real queue later
   res.status(201).json(task);
 });
 
