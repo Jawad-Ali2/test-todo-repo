@@ -1,0 +1,5 @@
+/* client/css/style.css */
+body { font-family: Arial, sans-serif; margin: 20px; }
+.task { padding: 8px; border-bottom: 1px solid #eee; }
+
+/* TODO: improve responsive styles and accessibility */
